@@ -73,7 +73,7 @@ then goto the <a href="#mandatory-vars">variables tab</a> for more info on setti
 ### Host it on VPS or Locally
 
 ```sh
-git clone https://github.com/DeekshithSH/TG-FileStreamBot
+git clone https://github.com/AswanthVK/NewFileToLinkv2Bot
 cd TG-FileStreamBot
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
