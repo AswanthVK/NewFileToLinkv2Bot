@@ -5,6 +5,7 @@ from WebStreamer.vars import Var
 from pyrogram import filters
 from WebStreamer.utils.Translation import Language, BUTTON
 from pyrogram.enums.parse_mode import ParseMode
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 
 @StreamBot.on_message(filters.command('start') & filters.private)
