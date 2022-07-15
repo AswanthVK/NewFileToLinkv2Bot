@@ -8,6 +8,44 @@ from pyrogram.enums.parse_mode import ParseMode
 
 @StreamBot.on_message(filters.command('start') & filters.private)
 async def start(b, m):
+    usr_cmd = m.text.split("_")[-1]
+    if usr_cmd == "/start":
+        if Var.UPDATES_CHANNEL != "None":
+            try:
+                user = await b.get_chat_member(Var.UPDATES_CHANNEL, m.chat.id)
+                if user.status == "kicked":
+                    await b.send_message(
+                        chat_id=m.chat.id,
+                        text="__Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ__\n\n @AswanthVK **Tʜᴇʏ Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
+                        parse_mode="markdown",
+                        disable_web_page_preview=True
+                    )
+                    return
+            except UserNotParticipant:
+                await b.send_message(
+                    chat_id=m.chat.id,
+                    text="<b>Join my Updates Channel for use me.</b>",
+                    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
+                            ],
+                            [
+                                InlineKeyboardButton("🔄 Refresh 🔄 ",
+                                                     url=f"https://t.me/NewFileToLinkv2Bot?start") # Chnage ur app name
+                            ]
+                        ]
+                    ),
+                    parse_mode="HTML"
+                )
+                return
+            except Exception:
+                await b.send_message(
+                    chat_id=m.chat.id,
+                    text="<i>Sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ</i> <b><a href='http://t.me/AswanthVK'>[ ᴄʟɪᴄᴋ ʜᴇʀᴇ ]</a></b>",
+                    parse_mode="HTML",
+                    disable_web_page_preview=True)
+                return
     # lang = getattr(Language, m.from_user.language_code)
     lang = getattr(Language, "en")
     await m.reply_text(
