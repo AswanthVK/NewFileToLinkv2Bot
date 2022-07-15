@@ -45,7 +45,7 @@ async def start(b, m):
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="<i>Sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ</i> <b><a href='http://t.me/AswanthVK'>[ ᴄʟɪᴄᴋ ʜᴇʀᴇ ]</a></b>",
-                    parse_mode="HTML",
+                    parse_mode=ParseMode.HTML,
                     disable_web_page_preview=True)
                 return
     # lang = getattr(Language, m.from_user.language_code)
