@@ -38,7 +38,7 @@ async def start(b, m):
                             ]
                         ]
                     ),
-                    parse_mode="HTML"
+                    parse_mode=ParseMode.HTML
                 )
                 return
             except Exception:
