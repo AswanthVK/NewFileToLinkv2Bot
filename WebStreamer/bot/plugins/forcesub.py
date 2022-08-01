@@ -4,6 +4,7 @@ logger = logging.getLogger(__name__)
 from WebStreamer.bot import StreamBot
 from WebStreamer.vars import Var
 from pyrogram import Client, filters
+from pyrogram.enums.parse_mode import ParseMode
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied
 
@@ -23,7 +24,7 @@ async def force_sub(c, m):
                 InlineKeyboardButton('🔄 Refresh 🔄', url=f'https://t.me/NewFileToLinkv2Bot?start')
             ]]
             markup = InlineKeyboardMarkup(button)
-            return await m.reply_text(text="Hey join in my updates channel to use me.", parse_mode='markdown', reply_markup=markup, quote=True)
+            return await m.reply_text(text="Hey join in my updates channel to use me.", parse_mode=ParseMode.HTML, reply_markup=markup, quote=True)
 
         except ChatAdminRequired:
             logger.warning(f"Make me admin in @{Var.UPDATES_CHANNEL}")
