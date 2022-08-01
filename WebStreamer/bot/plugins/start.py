@@ -33,8 +33,7 @@ async def start(b, m):
                                 InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
                             ],
                             [
-                                InlineKeyboardButton("🔄 Refresh 🔄 ",
-                                                     url=f"https://t.me/NewFileToLinkv2Bot?start") # Chnage ur app name
+                                InlineKeyboardButton("🔄 Refresh 🔄 ", url=f"https://t.me/NewFileToLinkv2Bot?start") # Chnage ur app name
                             ]
                         ]
                     ),
