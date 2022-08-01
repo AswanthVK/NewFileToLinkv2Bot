@@ -15,8 +15,8 @@ async def start(b, m):
     await m.reply_text(
         text=lang.START_TEXT.format(m.from_user.mention),
         parse_mode=ParseMode.HTML,
-        disable_web_page_preview=True,
-        reply_markup=BUTTON.START_BUTTONS
+        disable_web_page_preview=True #,
+        #reply_markup=BUTTON.START_BUTTONS
         )
 
 
