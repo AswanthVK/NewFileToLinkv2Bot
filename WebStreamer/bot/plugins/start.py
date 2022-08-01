@@ -26,8 +26,8 @@ async def start(bot, update):
     lang = getattr(Language, "en")
     await update.reply_text(
         text=lang.ABOUT_TEXT.format(update.from_user.mention),
-        disable_web_page_preview=True,
-        reply_markup=BUTTON.ABOUT_BUTTONS
+        disable_web_page_preview=True #,
+        #reply_markup=BUTTON.ABOUT_BUTTONS
     )
 
 
@@ -38,6 +38,6 @@ async def help_handler(bot, message):
     await message.reply_text(
         text=lang.HELP_TEXT.format(Var.UPDATES_CHANNEL),
         parse_mode=ParseMode.HTML,
-        disable_web_page_preview=True,
-        reply_markup=BUTTON.HELP_BUTTONS
+        disable_web_page_preview=True #,
+        #reply_markup=BUTTON.HELP_BUTTONS
         )
